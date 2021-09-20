@@ -46,11 +46,17 @@ export const constantRoutes = [
   {
     path: '/playlist',
     component: Layout,
-    children:[
+    children: [
       {
-        path:'list',
+        path: 'list',
         component: () => import('@/views/playlist/list'),
-        meta:{title: '歌单管理', icon: 'table'}
+        meta: { title: '歌单管理', icon: 'table' }
+      },
+      {
+        path: 'edit/:id',
+        component: () => import('@/views/playlist/edit'),
+        meta: { title: '编辑歌单', icon: 'table' },
+        hidden: true
       }
     ]
   },
@@ -58,11 +64,11 @@ export const constantRoutes = [
   {
     path: '/swiper',
     component: Layout,
-    children:[
+    children: [
       {
-        path:'swiper',
+        path: 'swiper',
         component: () => import('@/views/swiper/swiper'),
-        meta:{title: '轮播图管理', icon: 'example'}
+        meta: { title: '轮播图管理', icon: 'example' }
       }
     ]
   },
@@ -70,11 +76,11 @@ export const constantRoutes = [
   {
     path: '/blog',
     component: Layout,
-    children:[
+    children: [
       {
-        path:'blog',
+        path: 'blog',
         component: () => import('@/views/blog/blog'),
-        meta:{title: '博客管理', icon: 'tree'}
+        meta: { title: '博客管理', icon: 'tree' }
       }
     ]
   },
